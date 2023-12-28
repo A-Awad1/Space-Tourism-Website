@@ -6,7 +6,7 @@
 
 This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3).
 
-Overview:
+## Overview:
 
 Website gives a simulation of a space tourism and gives information about the journey such as the names of the destinations, the crew accompanying the journey, and the technology used during the journey.
 
