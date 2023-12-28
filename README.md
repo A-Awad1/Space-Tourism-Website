@@ -29,6 +29,8 @@ This Project is designed from a professional figma file.
 - Vuex
 - SCSS
 - JavaScript (ECMAScript, AJAX, JSON)
+- Font Awesome
+- Mobile First Approach
 
 <!-- **[See Website Live]()** -->
 
