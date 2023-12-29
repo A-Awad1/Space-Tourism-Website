@@ -1,22 +1,29 @@
 .container {
+  --bs-gutter-x: 1.5rem;
   padding: {
-    left: 15px;
-    right: 15px;
+    right: calc(var(--bs-gutter-x) * 0.5);
+    left: calc(var(--bs-gutter-x) * 0.5);
+    //   right: 15px;
+    //   left: 15px;
   }
   margin: {
-    left: auto;
     right: auto;
+    left: auto;
   }
-  @include underTablet {
-      width: 100%;
+  width: 100%;
+  @include small {
+    max-width: 540px;
   }
-  @include aboveTablet {
-      width: 750px;
+  @include medium {
+    max-width: 720px;
   }
-  @include aboveMedium {
-      width: 970px;
+  @include large {
+    max-width: 960px;
   }
-  @include aboveLarge {
-      width: 1170px;
+  @include xLarge {
+    max-width: 1140px;
   }
-} 
+  @include xxLarge {
+    max-width: 1320px;
+  }
+}

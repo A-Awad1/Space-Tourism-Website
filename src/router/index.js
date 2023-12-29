@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
-import HomeView from "../views/HomeView.vue";
-import AboutView from "../views/AboutView.vue";
+import HomeView from "@/views/HomeView.vue";
+import DestinationsView from "@/views/DestinationsView.vue";
+import CrewView from "@/views/CrewView.vue";
+import TechnologyView from "@/views/TechnologyView.vue";
 
 const routes = [
   {
@@ -9,9 +11,23 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/about",
-    name: "about",
-    component: AboutView,
+    path: "/destinations",
+    name: "destinations",
+    component: DestinationsView,
+  },
+  {
+    path: "/crew",
+    name: "crew",
+    component: CrewView,
+  },
+  {
+    path: "/technology",
+    name: "technology",
+    component: TechnologyView,
+  },
+  {
+    path: "/:catchAll(.*)",
+    redirect: "/",
   },
 ];
 
