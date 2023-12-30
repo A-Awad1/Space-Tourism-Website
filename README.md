@@ -1,6 +1,6 @@
 # Multi Page Space Tourism Website (from Frontend Mentor Website)
 
-**Project Progress : ![5%](https://progress-bar.dev/5/?title=done)**
+**Project Progress : ![15%](https://progress-bar.dev/15/?title=done)**
 
 <!-- **[See Website Live]()** -->
 
