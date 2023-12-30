@@ -1,6 +1,7 @@
 <template>
   <nav>
     <img src="../assets/shared/logo.svg" alt="logo icon" />
+    <div class="line"></div>
     <img
       src="../assets/shared/icon-hamburger.svg"
       alt="menu icon"
@@ -59,10 +60,24 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @include xLarge {
+    justify-content: center;
+  }
   padding: 24px;
+  @include small {
+    padding: 0 {
+      left: 39px;
+    }
+  }
+  @include xxLarge {
+    padding: 40px 0 0 55px;
+  }
   > img {
     &:first-of-type {
       width: 40px;
+      @include small {
+        width: 48px;
+      }
     }
     &:last-of-type {
       cursor: pointer;
@@ -71,9 +86,25 @@ nav {
       }
     }
   }
+  .line {
+    display: none;
+    @include xLarge {
+      background-color: colors.$second-text;
+      display: initial;
+      height: 1px;
+      flex: 1;
+      max-width: 800px;
+      margin: 0 -10px 0 64px;
+      z-index: 2;
+      filter: drop-shadow(0 4px 4px 0 #000);
+    }
+    @include xxLarge {
+      margin-right: -47px;
+    }
+  }
   ul {
     height: 100%;
-    width: 67%;
+    width: 250px;
     position: absolute;
     right: 0;
     top: 0;
@@ -81,18 +112,26 @@ nav {
     letter-spacing: 2.7px;
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 12px;
     background: #1e212d;
     @include small {
       display: flex !important;
       flex-direction: row;
       height: auto;
       width: auto;
+      background-color: #161923;
       position: static;
-      padding: 40px 48px;
+      letter-spacing: 2.36px;
+      padding: 0 30px;
+      gap: 20px;
+    }
+    @include medium {
+      gap: 37px;
+      padding: 0 48px;
+    }
+    @include xxLarge {
+      padding: 0 167px 0 123px;
       letter-spacing: 2.7px;
-      gap: 32px;
-      background: #1e212d;
     }
     > img {
       position: absolute;
@@ -114,20 +153,30 @@ nav {
       position: relative;
       width: fit-content;
       user-select: none;
+      padding: 10px 0;
+      @include small {
+        padding: 40px 0;
+      }
       &::before {
         content: "0" counter(route);
         font-weight: bold;
         padding-right: 12px;
+        @include small {
+          display: none;
+        }
+        @include xLarge {
+          display: initial;
+        }
       }
       &::after {
         content: "";
         width: 100%;
         height: 3px;
         background-color: currentColor;
-        position: absolute;
-        bottom: -12px;
-        left: 0;
         transition: $main-transition;
+        position: absolute;
+        left: 0;
+        bottom: 0;
       }
       &:not(.active) {
         &::after {

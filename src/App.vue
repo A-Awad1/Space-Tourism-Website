@@ -22,10 +22,12 @@ body,
 }
 html {
   min-width: fit-content;
+  background-color: colors.$main-background;
 }
 #app {
   min-width: 375px;
   font-family: "Barlow Condensed", sans-serif;
   color: colors.$main-text;
+  position: relative;
 }
 </style>
