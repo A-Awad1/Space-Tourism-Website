@@ -84,22 +84,21 @@ export default {
         family: "Bellefair", serif;
         size: 20px;
       }
-      &::before {
+      &::before,
+      &::after {
         content: "";
-        width: 100%;
         position: absolute;
-        background-color: colors.$main-text;
         aspect-ratio: inherit;
         border-radius: inherit;
+      }
+      &::before {
+        width: 100%;
+        background-color: colors.$main-text;
         z-index: -1;
       }
       &::after {
-        content: "";
         width: 164%;
-        position: absolute;
         background-color: colors.$main-background;
-        aspect-ratio: inherit;
-        border-radius: inherit;
         z-index: -2;
         opacity: 0;
         transition: opacity $main-transition;
