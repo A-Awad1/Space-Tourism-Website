@@ -29,5 +29,9 @@ html {
   font-family: "Barlow Condensed", sans-serif;
   color: colors.$main-text;
   position: relative;
+  background : {
+    repeat: no-repeat;
+    size: cover;
+  }
 }
 </style>

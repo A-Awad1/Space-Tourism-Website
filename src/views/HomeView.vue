@@ -6,7 +6,7 @@
         <h1>space</h1>
         <p v-text="siteData.intro"></p>
       </div>
-      <button>explore</button>
+      <button @click="explore">explore</button>
     </section>
   </div>
 </template>
@@ -20,16 +20,17 @@ export default {
       siteData,
     };
   },
+  methods: {
+    explore: function () {
+      this.$router.push({ name: "destinations" });
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 #app {
-  background : {
-    image: url(../assets/home/background-home-mobile.jpg);
-    repeat: no-repeat;
-    size: cover;
-  }
+  background-image: url(../assets/home/background-home-mobile.jpg);
   @include medium {
     background-image: url(../assets/home/background-home-tablet.jpg);
   }
@@ -37,18 +38,41 @@ export default {
     background-image: url(../assets/home/background-home-desktop.jpg);
   }
   section.home {
-    padding: 24px 12px;
+    display: flex;
+    flex-direction: column;
     text-transform: uppercase;
+    padding: 24px 12px;
+    @include medium {
+      padding: 106px 129px 0;
+    }
+    @include xxLarge {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 251px 0 0 165px;
+      gap: 100px;
+      // padding-top: 251px; /// delete
+    }
     > div {
       @extend %center-flex;
       flex-direction: column;
       gap: 16px;
-      text-align: center;
+      @include medium {
+        gap: 24px;
+      }
       color: colors.$second-text;
-      span {
-        letter-spacing: 2.7px;
+      @include xxLarge {
+        width: min-content;
+        align-items: start;
       }
       > {
+        span {
+          letter-spacing: 3.38px;
+          font-size: 20px;
+          @include xxLarge {
+            letter-spacing: 4.72px;
+            font-size: 28px;
+          }
+        }
         h1 {
           color: colors.$main-text;
           font: {
@@ -56,13 +80,30 @@ export default {
             size: 80px;
             weight: normal;
           }
+          @include medium {
+            line-height: 150px;
+            font-size: 150px;
+          }
+          @include xxLarge {
+            line-height: normal;
+          }
         }
         p {
+          text-align: center;
           text-transform: initial;
           line-height: 25px;
           font: {
             family: "Barlow", sans-serif;
             size: 15px;
+          }
+          @include medium {
+            line-height: 28px;
+            font-size: 16px;
+          }
+          @include xxLarge {
+            text-align: left;
+            line-height: 32px;
+            font-size: 18px;
           }
         }
       }
@@ -83,6 +124,15 @@ export default {
       font: {
         family: "Bellefair", serif;
         size: 20px;
+      }
+      @include medium {
+        width: 242px;
+        font-size: 32px;
+        letter-spacing: 2px;
+        margin-top: 156px;
+      }
+      @include xxLarge {
+        margin-right: 93px;
       }
       &::before,
       &::after {

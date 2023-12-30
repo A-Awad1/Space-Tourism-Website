@@ -22,10 +22,7 @@
       >
         <li
           role="link"
-          @click="
-            currentRoute = route;
-            navigate();
-          "
+          @click="navigate"
           @keypress.enter="navigate"
           v-text="route"
           :class="{ active: currentRoute === route }"
@@ -40,11 +37,13 @@ export default {
   name: "AppNav",
   data: function () {
     return {
-      currentRoute: "home",
       mobileMenu: false,
     };
   },
   computed: {
+    currentRoute: function () {
+      return this.$route.name;
+    },
     routes: function () {
       return this.$router
         .getRoutes()
