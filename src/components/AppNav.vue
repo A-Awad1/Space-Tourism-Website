@@ -95,7 +95,7 @@ nav {
       flex: 1;
       max-width: 800px;
       margin: 0 -10px 0 64px;
-      z-index: 2;
+      z-index: 3;
       filter: drop-shadow(0 4px 4px 0 #000);
     }
     @include xxLarge {
@@ -114,6 +114,7 @@ nav {
     flex-direction: column;
     gap: 12px;
     background: #1e212d;
+    z-index: 3;
     @include small {
       display: flex !important;
       flex-direction: row;
