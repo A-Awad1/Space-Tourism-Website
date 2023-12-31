@@ -49,9 +49,12 @@ export default {
     display: flex;
     flex-direction: column;
     text-transform: uppercase;
-    padding: 24px 12px;
+    padding: 24px 12px 48px;
+    @include small {
+      padding: 60px 60px 48px;
+    }
     @include medium {
-      padding: 106px 129px 0;
+      padding: 106px 129px 88px;
     }
     @include xxLarge {
       flex-direction: row;
