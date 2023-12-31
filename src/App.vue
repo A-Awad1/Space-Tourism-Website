@@ -5,7 +5,11 @@
 
 <script>
 import AppNav from "@/components/AppNav";
+import siteData from "./data.json";
 export default {
+  provide: {
+    siteData,
+  },
   components: {
     AppNav,
   },

@@ -12,13 +12,10 @@
 </template>
 
 <script>
-import siteData from "../data.json";
 export default {
   name: "HomeView",
-  data: function () {
-    return {
-      siteData,
-    };
+  inject: {
+    siteData: "siteData",
   },
   methods: {
     explore: function () {
