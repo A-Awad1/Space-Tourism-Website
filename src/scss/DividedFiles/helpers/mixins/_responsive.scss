@@ -33,3 +33,8 @@
     @content;
   }
 }
+@mixin smallHeight {
+  @media (max-height: 898px) {
+    @content;
+  }
+}

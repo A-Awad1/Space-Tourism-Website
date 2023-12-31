@@ -71,7 +71,12 @@ nav {
     }
   }
   @include xxLarge {
-    padding: 4.5vh 0 0 6vh;
+    padding: 40px 0 0 55px;
+  }
+  @include smallHeight {
+    @include small {
+      padding: 15px 0 0 39px;
+    }
   }
   > img {
     &:first-of-type {
@@ -160,6 +165,11 @@ nav {
       @include small {
         padding: 40px 0;
         font-size: 14px;
+      }
+      @include smallHeight {
+        @include small {
+          padding: 25px 0;
+        }
       }
       @include xLarge {
         font-size: 16px;

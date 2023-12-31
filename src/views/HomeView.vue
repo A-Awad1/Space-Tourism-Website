@@ -31,7 +31,7 @@ export default {
 <style lang="scss">
 #app {
   background-image: url(../assets/home/background-home-mobile.jpg);
-  @include medium {
+  @include small {
     background-image: url(../assets/home/background-home-tablet.jpg);
   }
   @include large {
