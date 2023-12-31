@@ -41,46 +41,54 @@ export default {
     flex: 1;
     display: flex;
     flex-direction: column;
-    @include xxLarge {
-      justify-content: end;
+    justify-content: center;
+    @include medium {
+      justify-content: flex-end;
     }
   }
   section.home {
+    text-transform: uppercase;
+    padding: 0 12px;
     display: flex;
     flex-direction: column;
-    text-transform: uppercase;
-    padding: 24px 12px 48px;
-    @include small {
-      padding: 60px 60px 48px;
-    }
+    align-items: center;
+    gap: 80px;
     @include medium {
-      padding: 106px 129px 88px;
-    }
-    @include xxLarge {
-      flex-direction: row;
+      flex: 1;
       justify-content: space-between;
-      padding: 70px 0 131px 93px;
-      gap: 100px;
+      gap: 10px;
+      padding: 9vh 129px 10vh;
+    }
+    @include large {
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: flex-end;
+      flex: auto;
+      gap: 80px;
+      padding: 0 0 14.5vh;
     }
     > div {
+      color: colors.$second-text;
       @extend %center-flex;
       flex-direction: column;
       gap: 16px;
       @include medium {
-        gap: 24px;
+        gap: 2.3vh;
       }
-      color: colors.$second-text;
-      @include xxLarge {
+      @include large {
         width: min-content;
         align-items: start;
+        margin-left: -30px;
+        gap: 24px;
       }
       > {
         span {
           letter-spacing: 3.38px;
           font-size: 20px;
-          @include xxLarge {
+          white-space: nowrap;
+          @include large {
             letter-spacing: 4.72px;
-            font-size: 28px;
+            font-size: 3.12vh;
           }
         }
         h1 {
@@ -91,11 +99,12 @@ export default {
             weight: normal;
           }
           @include medium {
-            line-height: 150px;
-            font-size: 150px;
+            line-height: 14.7vh;
+            font-size: 14.65vh;
           }
-          @include xxLarge {
+          @include large {
             line-height: normal;
+            font-size: 16.6667vh;
           }
         }
         p {
@@ -110,7 +119,7 @@ export default {
             line-height: 28px;
             font-size: 16px;
           }
-          @include xxLarge {
+          @include large {
             text-align: left;
             line-height: 32px;
             font-size: 18px;
@@ -121,13 +130,12 @@ export default {
     > button {
       aspect-ratio: 1/1;
       width: 150px;
-      border-radius: 50%;
       border: none;
-      text-transform: inherit;
+      border-radius: 50%;
       color: colors.$main-background;
+      text-transform: inherit;
       letter-spacing: 1.25px;
       @extend %center-flex;
-      margin: 81px auto 0;
       cursor: pointer;
       position: relative;
       z-index: 1;
@@ -135,14 +143,18 @@ export default {
         family: "Bellefair", serif;
         size: 20px;
       }
-      @include medium {
-        width: 242px;
-        font-size: 32px;
-        letter-spacing: 2px;
-        margin-top: 156px;
+      @include small {
+        margin-bottom: -16px;
       }
-      @include xxLarge {
-        margin-right: 93px;
+      @include medium {
+        font-size: 3.125vh;
+        letter-spacing: 2px;
+        width: 23.64vh;
+      }
+      @include large {
+        margin-bottom: 0;
+        font-size: 3.55555vh;
+        width: 30.4445vh;
       }
       &::before,
       &::after {

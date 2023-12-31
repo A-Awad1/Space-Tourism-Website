@@ -62,14 +62,16 @@ nav {
   @include xLarge {
     justify-content: center;
   }
-  padding: 24px;
+  padding: 24px {
+    bottom: 0;
+  }
   @include small {
     padding: 0 {
       left: 39px;
     }
   }
   @include xxLarge {
-    padding: 40px 0 0 55px;
+    padding: 4.5vh 0 0 6vh;
   }
   > img {
     &:first-of-type {
@@ -154,8 +156,13 @@ nav {
       width: fit-content;
       user-select: none;
       padding: 10px 0;
+      font-size: 16px;
       @include small {
         padding: 40px 0;
+        font-size: 14px;
+      }
+      @include xLarge {
+        font-size: 16px;
       }
       &::before {
         content: "0" counter(route);
