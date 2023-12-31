@@ -94,7 +94,7 @@ nav {
       flex: 1;
       max-width: 800px;
       margin: 0 -10px 0 64px;
-      z-index: 3;
+      z-index: 4;
       filter: drop-shadow(0 4px 4px 0 #000);
     }
     @include xxLarge {

@@ -37,6 +37,14 @@ export default {
   @include large {
     background-image: url(../assets/home/background-home-desktop.jpg);
   }
+  .container:has(section.home) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    @include xxLarge {
+      justify-content: end;
+    }
+  }
   section.home {
     display: flex;
     flex-direction: column;
@@ -48,9 +56,8 @@ export default {
     @include xxLarge {
       flex-direction: row;
       justify-content: space-between;
-      padding: 251px 0 0 165px;
+      padding: 70px 0 131px 93px;
       gap: 100px;
-      // padding-top: 251px; /// delete
     }
     > div {
       @extend %center-flex;
@@ -148,13 +155,13 @@ export default {
       }
       &::after {
         width: 164%;
-        background-color: colors.$main-background;
+        background-color: colors.$main-text;
         z-index: -2;
         opacity: 0;
         transition: opacity $main-transition;
       }
       &:hover::after {
-        opacity: 1;
+        opacity: 0.1;
       }
     }
   }

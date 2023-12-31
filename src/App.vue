@@ -33,5 +33,7 @@ html {
     repeat: no-repeat;
     size: cover;
   }
+  display: flex;
+  flex-direction: column;
 }
 </style>
