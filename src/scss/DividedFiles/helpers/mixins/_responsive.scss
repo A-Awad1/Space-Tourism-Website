@@ -1,10 +1,11 @@
+// width
 @mixin xxSmall {
-  @media (max-width: 373.98px) {
+  @media (max-width: 374.98px) {
     @content;
   }
 }
 @mixin xSmall {
-  @media (min-width: 374px) {
+  @media (min-width: 375px) {
     @content;
   }
 }
@@ -33,6 +34,7 @@
     @content;
   }
 }
+// Height
 @mixin smallHeight {
   @media (max-height: 898px) {
     @content;
