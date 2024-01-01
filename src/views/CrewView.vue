@@ -1,3 +1,3 @@
 <template>
-  <section>Crew</section>
+  <section class="crew">Crew</section>
 </template>

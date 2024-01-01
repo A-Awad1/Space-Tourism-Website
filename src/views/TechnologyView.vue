@@ -1,3 +1,3 @@
 <template>
-  <section>Technology</section>
+  <section class="technology">Technology</section>
 </template>

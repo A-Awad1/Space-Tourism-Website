@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="destinations">
     <!-- <p
       v-for="destination in siteData.destinations"
       :key="destination"

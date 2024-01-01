@@ -54,4 +54,25 @@ export default {
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+#app {
+  nav {
+    > {
+      img:first-of-type {
+      }
+      .line {
+      }
+      img:last-of-type {
+      }
+      ul {
+        > {
+          img {
+          }
+          li {
+          }
+        }
+      }
+    }
+  }
+}
+</style>
