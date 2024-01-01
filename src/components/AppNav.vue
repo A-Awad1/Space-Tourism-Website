@@ -62,24 +62,43 @@ nav {
   padding: 24px {
     bottom: 0;
   }
-  @include medium {
+  @include small {
     padding: 0 {
       left: 39px;
     }
   }
-  @include xxLarge {
+  @include large {
     padding: 40px 0 0 55px;
+  }
+  @include smallHeight {
+    padding: 12px {
+      bottom: 0;
+    }
+    @include small {
+      padding: 0 {
+        left: 20px;
+      }
+    }
+    @include large {
+      padding-top: 12px;
+    }
   }
   > {
     img:first-of-type {
       width: 40px;
-      @include medium {
+      @include small {
         width: 48px;
+      }
+      @include smallHeight {
+        width: 35px;
+        @include small {
+          width: 40px;
+        }
       }
     }
     .line {
       display: none;
-      @include xxLarge {
+      @include xLarge {
         display: block;
         height: 1px;
         flex: 1;
@@ -90,7 +109,7 @@ nav {
     }
     img:last-of-type {
       cursor: pointer;
-      @include medium {
+      @include small {
         display: none;
       }
     }
@@ -98,6 +117,7 @@ nav {
       background-color: colors.$main-background;
       height: 100%;
       width: 254px;
+      max-width: calc(100% - 70px);
       position: absolute;
       top: 0;
       right: 0;
@@ -105,7 +125,7 @@ nav {
       display: flex;
       flex-direction: column;
       gap: 12px;
-      @include medium {
+      @include small {
         height: auto;
         width: auto;
         position: static;
@@ -114,9 +134,20 @@ nav {
         flex-direction: row;
         gap: 37px;
       }
-      @include xxLarge {
+      @include xLarge {
         padding: 0 165px 0 123px;
         gap: 48px;
+      }
+      @include smallHeight {
+        padding-top: 100px;
+        gap: 6px;
+        @include small {
+          padding-top: 0;
+          gap: 37px;
+        }
+        @include xLarge {
+          gap: 48px;
+        }
       }
       > {
         img {
@@ -124,8 +155,11 @@ nav {
           top: 34px;
           right: 26px;
           cursor: pointer;
-          @include medium {
+          @include small {
             display: none;
+          }
+          @include smallHeight {
+            top: 24px;
           }
         }
         li {
@@ -137,14 +171,19 @@ nav {
           width: fit-content;
           padding: 10px 0;
           user-select: none;
-          @include medium {
+          @include small {
             letter-spacing: 2.36px;
             padding: 39px 0;
             font-size: 14px;
           }
-          @include xxLarge {
+          @include large {
             letter-spacing: 2.7px;
             font-size: 16px;
+          }
+          @include smallHeight {
+            @include small {
+              padding: 25px 0;
+            }
           }
           &:first-of-type {
             counter-set: route 0;
@@ -153,10 +192,10 @@ nav {
             content: "0" counter(route);
             padding-right: 12px;
             font-weight: bold;
-            @include medium {
+            @include small {
               display: none;
             }
-            @include xxLarge {
+            @include large {
               display: initial;
             }
           }
