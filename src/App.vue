@@ -22,6 +22,9 @@ body {
   background-color: colors.$main-background;
 }
 #app {
+  position: relative;
+  color: colors.$main-text;
+  font-family: "Barlow Condensed", sans-serif;
   // start background
   background: {
     attachment: fixed;
