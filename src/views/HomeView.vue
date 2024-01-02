@@ -34,6 +34,7 @@ section.home {
   }
   @include xxLarge {
     flex-direction: row;
+    padding: 251px 165px 131px;
   }
   > {
     div {
@@ -120,6 +121,9 @@ section.home {
         --dimension: 242px;
         letter-spacing: 2px;
         font-size: 32px;
+      }
+      @include xxLarge {
+        --dimension: 274px;
       }
     }
   }
