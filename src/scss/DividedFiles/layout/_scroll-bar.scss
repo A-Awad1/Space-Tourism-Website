@@ -5,7 +5,7 @@ html {
 $scroll: "::-webkit-scrollbar";
 
 #{$scroll} {
-  width: 15px;
+  width: 17px;
 }
 #{$scroll}-track {
   background-color: colors.$main-text;

@@ -18,15 +18,17 @@ export default {
 
 <style lang="scss">
 @import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&family=Barlow:wght@400;700&family=Bellefair&display=swap");
-body {
-  background-color: colors.$main-background;
-}
+html,
+body,
 #app {
-  position: relative;
-  color: colors.$main-text;
-  font-family: "Barlow Condensed", sans-serif;
+  height: 100%;
+  width: 100%;
+  min-width: fit-content;
+}
+body {
   // start background
   background: {
+    color: colors.$main-background;
     attachment: fixed;
     repeat: no-repeat;
     size: cover;
@@ -56,6 +58,11 @@ body {
     @include backgroundImage("technology");
   }
   // end background
-  min-height: 100vh;
+}
+#app {
+  min-width: 200px;
+  position: relative;
+  color: colors.$main-text;
+  font-family: "Barlow Condensed", sans-serif;
 }
 </style>

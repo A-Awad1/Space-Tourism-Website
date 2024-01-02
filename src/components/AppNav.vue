@@ -105,22 +105,26 @@ nav {
         opacity: 0.5;
       }
     }
+    img:nth-of-type(2),
     img:last-of-type {
       cursor: pointer;
-      z-index: 1;
-      @include smallHeight {
-        top: 24px;
+      @include small {
+        display: none;
       }
+    }
+    img:last-of-type {
+      z-index: 1;
     }
     ul {
       background-color: colors.$main-background;
       height: 100%;
       width: 254px;
-      max-width: calc(100% - 70px);
+      min-width: fit-content;
+      max-width: calc(100% - 30px);
       position: absolute;
       top: 0;
       right: 0;
-      padding: 118px 32px 10px;
+      padding: 118px 10px 10px 32px;
       display: flex;
       flex-direction: column;
       gap: 12px;
