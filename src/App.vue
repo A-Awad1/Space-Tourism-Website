@@ -24,6 +24,8 @@ body,
   height: 100%;
   width: 100%;
   min-width: fit-content;
+  display: flex;
+  flex-direction: column;
 }
 body {
   // start background

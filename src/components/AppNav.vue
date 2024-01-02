@@ -39,7 +39,7 @@ export default {
   name: "AppNav",
   data: function () {
     return {
-      mobileMenu: true,
+      mobileMenu: false,
     };
   },
   computed: {
