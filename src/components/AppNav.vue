@@ -6,13 +6,15 @@
       src="../assets/shared/icon-hamburger.svg"
       alt="menu icon"
       @click="mobileMenu = true"
+      v-if="!mobileMenu"
+    />
+    <img
+      src="../assets/shared/icon-close.svg"
+      alt="close icon"
+      @click="mobileMenu = false"
+      v-else
     />
     <ul v-show="mobileMenu">
-      <img
-        src="../assets/shared/icon-close.svg"
-        alt="close icon"
-        @click="mobileMenu = false"
-      />
       <router-link
         v-for="route in routes"
         :key="route"
@@ -37,7 +39,7 @@ export default {
   name: "AppNav",
   data: function () {
     return {
-      mobileMenu: false,
+      mobileMenu: true,
     };
   },
   computed: {
@@ -71,9 +73,6 @@ nav {
     padding: 40px 0 0 55px;
   }
   @include smallHeight {
-    padding: 12px {
-      bottom: 0;
-    }
     @include small {
       padding: 0 {
         left: 20px;
@@ -90,7 +89,6 @@ nav {
         width: 48px;
       }
       @include smallHeight {
-        width: 35px;
         @include small {
           width: 40px;
         }
@@ -109,8 +107,9 @@ nav {
     }
     img:last-of-type {
       cursor: pointer;
-      @include small {
-        display: none;
+      z-index: 1;
+      @include smallHeight {
+        top: 24px;
       }
     }
     ul {
@@ -138,87 +137,62 @@ nav {
         padding: 0 165px 0 123px;
         gap: 48px;
       }
-      @include smallHeight {
-        padding-top: 100px;
-        gap: 6px;
+      > li {
+        cursor: pointer;
+        text-transform: uppercase;
+        counter-increment: route;
+        letter-spacing: 2.7px;
+        position: relative;
+        width: fit-content;
+        padding: 10px 0;
+        user-select: none;
         @include small {
-          padding-top: 0;
-          gap: 37px;
+          letter-spacing: 2.36px;
+          padding: 39px 0;
+          font-size: 14px;
         }
-        @include xLarge {
-          gap: 48px;
+        @include large {
+          letter-spacing: 2.7px;
+          font-size: 16px;
         }
-      }
-      > {
-        img {
-          position: absolute;
-          top: 34px;
-          right: 26px;
-          cursor: pointer;
+        @include smallHeight {
+          @include small {
+            padding: 25px 0;
+          }
+        }
+        &:first-of-type {
+          counter-set: route 0;
+        }
+        &::before {
+          content: "0" counter(route);
+          padding-right: 12px;
+          font-weight: bold;
           @include small {
             display: none;
           }
-          @include smallHeight {
-            top: 24px;
+          @include large {
+            display: initial;
           }
         }
-        li {
-          cursor: pointer;
-          text-transform: uppercase;
-          counter-increment: route;
-          letter-spacing: 2.7px;
-          position: relative;
-          width: fit-content;
-          padding: 10px 0;
-          user-select: none;
-          @include small {
-            letter-spacing: 2.36px;
-            padding: 39px 0;
-            font-size: 14px;
-          }
-          @include large {
-            letter-spacing: 2.7px;
-            font-size: 16px;
-          }
-          @include smallHeight {
-            @include small {
-              padding: 25px 0;
-            }
-          }
-          &:first-of-type {
-            counter-set: route 0;
-          }
-          &::before {
-            content: "0" counter(route);
-            padding-right: 12px;
-            font-weight: bold;
-            @include small {
-              display: none;
-            }
-            @include large {
-              display: initial;
-            }
-          }
-          &::after {
-            content: "";
-            width: 100%;
-            height: 3px;
-            background-color: currentColor;
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            opacity: 0;
-            transition: $main-transition;
-          }
-          &.active::after {
-            opacity: 1;
-          }
-          &:not(.active):hover::after {
-            opacity: 0.5;
-          }
-          &:active::after {
-            opacity: 1;
-          }
+        &::after {
+          content: "";
+          width: 100%;
+          height: 3px;
+          background-color: currentColor;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          opacity: 0;
+          transition: $main-transition;
+        }
+        &.active::after {
+          opacity: 1;
+        }
+        &:not(.active):hover::after {
+          opacity: 0.5;
+        }
+        &:active::after {
+          opacity: 1;
         }
       }
     }
