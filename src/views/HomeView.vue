@@ -26,13 +26,14 @@ export default {
 <style lang="scss">
 section.home {
   flex: 1;
-  padding: 48px 24px;
+  padding: 48px 6.5vw;
   @extend %column-flex;
   justify-content: space-between;
-  @include medium {
+  gap: 81px;
+  @include small {
     padding: 106px 24px 90px;
   }
-  @include xxLarge {
+  @include xLarge {
     flex-direction: row;
     padding: 251px 165px 131px;
   }
@@ -40,11 +41,11 @@ section.home {
     div {
       @extend %column-flex;
       gap: 16px;
-      @include medium {
+      @include small {
         gap: 24px;
         width: min-content;
       }
-      @include xxLarge {
+      @include xLarge {
         align-items: flex-start;
       }
       > {
@@ -53,11 +54,11 @@ section.home {
           letter-spacing: 2.7px;
           text-transform: uppercase;
           white-space: nowrap;
-          @include medium {
+          @include small {
             font-size: 20px;
             letter-spacing: 3.38px;
           }
-          @include xxLarge {
+          @include xLarge {
             font-size: 28px;
             letter-spacing: 4.72px;
           }
@@ -70,11 +71,11 @@ section.home {
             family: "Bellefair", serif;
             size: 80px;
           }
-          @include medium {
+          @include small {
             line-height: 150px;
             font-size: 150px;
           }
-          @include xxLarge {
+          @include xLarge {
             line-height: normal;
           }
         }
@@ -86,11 +87,11 @@ section.home {
             family: "Barlow", sans-serif;
             size: 15px;
           }
-          @include medium {
+          @include small {
             line-height: 28px;
             font-size: 16px;
           }
-          @include xxLarge {
+          @include xLarge {
             line-height: 32px;
             font-size: 18px;
             text-align: initial;
@@ -117,12 +118,12 @@ section.home {
         $shadow: calc(var(--dimension) * 31 / 100);
         box-shadow: 0 0 0 $shadow colors.$main-background;
       }
-      @include medium {
+      @include small {
         --dimension: 242px;
         letter-spacing: 2px;
         font-size: 32px;
       }
-      @include xxLarge {
+      @include xLarge {
         --dimension: 274px;
       }
     }
