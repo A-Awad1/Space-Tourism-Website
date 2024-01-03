@@ -63,6 +63,7 @@ body {
 }
 #app {
   min-width: 300px;
+  min-height: 667px;
   position: relative;
   color: colors.$main-text;
   font-family: "Barlow Condensed", sans-serif;
