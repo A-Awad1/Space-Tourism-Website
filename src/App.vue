@@ -62,7 +62,7 @@ body {
   // end background
 }
 #app {
-  min-width: 200px;
+  min-width: 300px;
   position: relative;
   color: colors.$main-text;
   font-family: "Barlow Condensed", sans-serif;
