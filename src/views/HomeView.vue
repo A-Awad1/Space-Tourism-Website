@@ -180,7 +180,7 @@ section.home {
       cursor: pointer;
       text-transform: uppercase;
       letter-spacing: 1.25px;
-      color: colors.$main-background;
+      color: colors.$button-text;
       border: none;
       border-radius: 50%;
       aspect-ratio: 1/1;
@@ -192,8 +192,9 @@ section.home {
         size: 20px;
       }
       &:hover {
-        $shadow: calc(var(--dimension) * 31 / 100);
-        box-shadow: 0 0 0 $shadow colors.$main-background;
+        $shadowSpread: calc(var(--dimension) * 31 / 100);
+        $shadowColor: rgba(white, 0.1036);
+        box-shadow: 0 0 0 $shadowSpread $shadowColor;
       }
       @include small {
         --dimension: 200px;

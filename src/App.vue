@@ -30,7 +30,7 @@ body,
 body {
   // start background
   background: {
-    color: colors.$main-background;
+    color: colors.$button-text;
     attachment: fixed;
     repeat: no-repeat;
     size: cover;

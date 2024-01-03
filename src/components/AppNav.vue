@@ -39,7 +39,7 @@ export default {
   name: "AppNav",
   data: function () {
     return {
-      mobileMenu: false,
+      mobileMenu: true,
     };
   },
   computed: {
@@ -116,7 +116,6 @@ nav {
       z-index: 1;
     }
     ul {
-      background-color: colors.$main-background;
       height: 100%;
       width: 254px;
       min-width: fit-content;
@@ -124,10 +123,11 @@ nav {
       position: absolute;
       top: 0;
       right: 0;
-      padding: 118px 10px 10px 32px;
+      padding: 110px 10px 10px 32px;
       display: flex;
       flex-direction: column;
       gap: 12px;
+      @extend %main-background;
       @include small {
         height: auto;
         width: auto;
