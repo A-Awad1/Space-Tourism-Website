@@ -23,5 +23,8 @@ span.pageNumber {
   @include medium {
     font-size: 20px;
   }
+  @include xLarge {
+    font-size: 28px;
+  }
 }
 </style>
