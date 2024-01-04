@@ -1,0 +1,24 @@
+<template>
+  <span v-text="pageNumber"></span>
+</template>
+
+<script>
+export default {
+  name: "PageNumberSpan",
+  computed: {
+    pageNumber: function () {
+      return `0 ${[...document.querySelectorAll("#app>nav>ul>li")].findIndex(
+        (e) => e.className === "active"
+      )}
+      `;
+    },
+  },
+};
+</script>
+
+<style lang="scss">
+span {
+  color: rgba(colors.$main-text, 0.25);
+  font-weight: 700;
+}
+</style>
