@@ -9,10 +9,20 @@
         v-for="dest in allDest"
         :key="dest"
         v-text="dest"
-        @click="currentDest = dest"
+        @click="currentDestName = dest"
       ></li>
     </ul>
-    {{ currentDestData }}
+    <h3 v-text="currentDest.name"></h3>
+    <p v-text="currentDest.description"></p>
+    <hr />
+    <div>
+      <span>avg. distance</span>
+      <span v-text="currentDest.distance"></span>
+    </div>
+    <div>
+      <span>est. travel time</span>
+      <span v-text="currentDest.travel"></span>
+    </div>
   </section>
 </template>
 
@@ -25,17 +35,17 @@ export default {
   },
   data() {
     return {
-      currentDest: this.siteData.destinations.map((e) => e.name)[0],
+      currentDestName: this.siteData.destinations.map((e) => e.name)[0],
     };
   },
   computed: {
     allDest: function () {
       return this.siteData.destinations.map((e) => e.name);
     },
-    currentDestData: function () {
+    currentDest: function () {
       return this.siteData.destinations.filter(
-        (e) => e.name === this.currentDest
-      );
+        (e) => e.name === this.currentDestName
+      )[0];
     },
   },
   components: {

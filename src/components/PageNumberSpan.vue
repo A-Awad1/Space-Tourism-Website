@@ -1,5 +1,5 @@
 <template>
-  <span v-text="pageNumber"></span>
+  <span class="pageNumber" v-text="pageNumber"></span>
 </template>
 
 <script>
@@ -17,7 +17,7 @@ export default {
 </script>
 
 <style lang="scss">
-span {
+span.pageNumber {
   color: rgba(colors.$main-text, 0.25);
   font-weight: 700;
 }
