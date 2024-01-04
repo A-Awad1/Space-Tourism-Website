@@ -27,7 +27,7 @@
           @click="navigate"
           @keypress.enter="navigate"
           v-text="route"
-          :class="{ active: currentRoute === route }"
+          :class="['option-hover', { active: currentRoute === route }]"
         ></li>
       </router-link>
     </ul>
@@ -103,6 +103,7 @@ nav {
         margin: 0 -47px 0 64px;
         background-color: #fff;
         opacity: 0.5;
+        z-index: 2;
       }
     }
     img:nth-of-type(2),
@@ -113,7 +114,7 @@ nav {
       }
     }
     img:last-of-type {
-      z-index: 1;
+      z-index: 2;
     }
     ul {
       height: 100%;
@@ -127,6 +128,7 @@ nav {
       display: flex;
       flex-direction: column;
       gap: 12px;
+      z-index: 1;
       @extend %main-background;
       @include small {
         height: auto;
@@ -177,26 +179,6 @@ nav {
           @include large {
             display: initial;
           }
-        }
-        &::after {
-          content: "";
-          width: 100%;
-          height: 3px;
-          background-color: currentColor;
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          opacity: 0;
-          transition: $main-transition;
-        }
-        &.active::after {
-          opacity: 1;
-        }
-        &:not(.active):hover::after {
-          opacity: 0.5;
-        }
-        &:active::after {
-          opacity: 1;
         }
       }
     }

@@ -8,7 +8,7 @@ export default {
   computed: {
     pageNumber: function () {
       return `0 ${[...document.querySelectorAll("#app>nav>ul>li")].findIndex(
-        (e) => e.className === "active"
+        (e) => e.classList.contains("active")
       )}
       `;
     },
@@ -20,5 +20,8 @@ export default {
 span.pageNumber {
   color: rgba(colors.$main-text, 0.25);
   font-weight: 700;
+  @include medium {
+    font-size: 20px;
+  }
 }
 </style>
