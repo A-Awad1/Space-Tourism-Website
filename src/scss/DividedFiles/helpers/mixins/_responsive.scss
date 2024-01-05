@@ -40,3 +40,9 @@
     @content;
   }
 }
+// Destinations View Small Height in Mobile
+@mixin mobileSmallHeight {
+  @media (max-height: 824px) and (max-width: 576px) {
+    @content;
+  }
+}

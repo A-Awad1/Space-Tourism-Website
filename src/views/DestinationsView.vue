@@ -73,45 +73,83 @@ section.destinations {
     flex-direction: column;
     justify-content: space-around;
   }
+  @include xLarge {
+    justify-content: flex-start;
+  }
+  @include smallHeight {
+    @include xLarge {
+      justify-content: space-evenly;
+    }
+  }
   > {
     header {
       @extend %center-flex;
       gap: 18px;
       margin: 24px 0 32px;
+      font-size: 16px;
       @include small {
         margin: 32px 0;
+        font-size: 18px;
       }
       @include medium {
         justify-content: flex-start;
         gap: 19px;
-        margin: 40px {
-          bottom: 60px;
-        }
-        margin-top: 0;
-        margin-bottom: 0;
+        margin: 0 40px;
+        font-size: 20px;
+      }
+      @include large {
+        margin: 0 100px;
       }
       @include xLarge {
         gap: 28px;
         margin: 76px 20px 64px 167px;
+        font-size: 28px;
+      }
+      @include mobileSmallHeight {
+        margin: 15px 0;
+      }
+      @include smallHeight {
+        @include small {
+          margin: 22px 0;
+          font-size: 16px;
+        }
+        @include medium {
+          margin: 0 40px;
+          font-size: 20px;
+        }
+        @include large {
+          margin: 0 100px;
+        }
+        @include xLarge {
+          font-size: 22px;
+        }
       }
       h2 {
         font: {
-          size: 16px;
+          size: inherit;
           weight: normal;
         }
         letter-spacing: 2.7px;
         line-height: normal;
         @include small {
-          font-size: 18px;
           letter-spacing: 3px;
         }
         @include medium {
-          font-size: 20px;
           letter-spacing: 3.375px;
         }
         @include xLarge {
-          font-size: 28px;
           letter-spacing: 4.725px;
+        }
+        @include smallHeight {
+          @include small {
+            letter-spacing: 2.5px;
+          }
+          @include medium {
+            letter-spacing: 3px;
+          }
+          @include xLarge {
+            letter-spacing: 4px;
+          }
         }
       }
     }
@@ -135,6 +173,22 @@ section.destinations {
           flex-basis: 445px;
           align-items: flex-start;
         }
+        @include mobileSmallHeight {
+          padding-top: 12px;
+        }
+        @include smallHeight {
+          @include small {
+            padding: 0 50px 12px;
+          }
+          @include medium {
+            padding: 0 97px 12px;
+          }
+          @include xLarge {
+            padding: 0;
+            flex-basis: 350px;
+            align-items: flex-start;
+          }
+        }
         > {
           ul {
             display: flex;
@@ -147,6 +201,22 @@ section.destinations {
               gap: 36px;
               margin: 0 {
                 bottom: 37px;
+              }
+            }
+            @include mobileSmallHeight {
+              margin: 4px 0 6px;
+            }
+            @include smallHeight {
+              @include small {
+                margin: 15px 0;
+              }
+              @include medium {
+                margin: 25px 0;
+              }
+              @include xLarge {
+                margin: 0 {
+                  bottom: 18px;
+                }
               }
             }
             li {
@@ -165,6 +235,14 @@ section.destinations {
                 letter-spacing: 2.7px;
                 padding-bottom: 15px;
               }
+              @include smallHeight {
+                @include small {
+                  font-size: 14px;
+                }
+                @include medium {
+                  font-size: 16px;
+                }
+              }
             }
           }
           h3 {
@@ -182,6 +260,14 @@ section.destinations {
             @include xLarge {
               font-size: 100px;
               line-height: normal;
+            }
+            @include smallHeight {
+              @include small {
+                font-size: 56px;
+              }
+              @include xLarge {
+                font-size: 80px;
+              }
             }
           }
           p {
@@ -210,6 +296,14 @@ section.destinations {
               font-size: 18px;
               margin-top: 14px;
             }
+            @include smallHeight {
+              @include small {
+                font-size: 15px;
+              }
+              @include medium {
+                font-size: 16px;
+              }
+            }
           }
           hr {
             background-color: #383b4b;
@@ -222,6 +316,17 @@ section.destinations {
             }
             @include xLarge {
               margin-top: 54px;
+            }
+            @include mobileSmallHeight {
+              margin: 12px;
+            }
+            @include smallHeight {
+              @include small {
+                margin: 15px 0;
+              }
+              @include xLarge {
+                margin: 25px 0;
+              }
             }
           }
           div {
@@ -237,10 +342,24 @@ section.destinations {
                 flex-basis: 50%;
                 align-items: flex-start;
               }
+              @include mobileSmallHeight {
+                gap: 5px;
+              }
               &:first-of-type {
                 margin-bottom: 32px;
                 @include medium {
                   margin-bottom: 0;
+                }
+                @include mobileSmallHeight {
+                  margin-bottom: 12px;
+                }
+                @include smallHeight {
+                  @include small {
+                    margin-bottom: 22px;
+                  }
+                  @include medium {
+                    margin-bottom: 0;
+                  }
                 }
               }
               span {
@@ -274,6 +393,20 @@ section.destinations {
         @include xLarge {
           width: 445px;
           align-self: flex-end;
+        }
+        @include smallHeight {
+          @include small {
+            width: 170px;
+          }
+          @include medium {
+            width: 200px;
+          }
+          @include large {
+            width: 225px;
+          }
+          @include xLarge {
+            width: 350px;
+          }
         }
       }
     }

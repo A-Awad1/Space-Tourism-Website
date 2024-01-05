@@ -19,12 +19,9 @@ export default {
 <style lang="scss">
 span.pageNumber {
   color: rgba(colors.$main-text, 0.25);
-  font-weight: 700;
-  @include medium {
-    font-size: 20px;
-  }
-  @include xLarge {
-    font-size: 28px;
+  font: {
+    weight: 700;
+    size: inherit;
   }
 }
 </style>
