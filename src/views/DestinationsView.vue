@@ -148,8 +148,6 @@ section.destinations {
                 letter-spacing: 2.7px;
                 padding-bottom: 15px;
               }
-              @include xLarge {
-              }
             }
           }
           h3 {
@@ -160,6 +158,10 @@ section.destinations {
             }
             @include medium {
               font-size: 80px;
+            }
+            @include xLarge {
+              font-size: 100px;
+              line-height: normal;
             }
           }
           p {
@@ -179,6 +181,13 @@ section.destinations {
               line-height: 175%;
               font-size: 16px;
             }
+
+            @include xLarge {
+              text-align: start;
+              line-height: 177.778%;
+              font-size: 18px;
+              margin-top: 14px;
+            }
           }
           hr {
             background-color: #383b4b;
@@ -188,6 +197,9 @@ section.destinations {
             margin: 32px 0;
             @include medium {
               margin: 49px 0 28px;
+            }
+            @include xLarge {
+              margin-top: 54px;
             }
           }
           div {
@@ -199,6 +211,10 @@ section.destinations {
             > div {
               @extend %column-flex;
               gap: 12px;
+              @include xLarge {
+                flex-basis: 50%;
+                align-items: flex-start;
+              }
               &:first-of-type {
                 margin-bottom: 32px;
                 @include medium {
