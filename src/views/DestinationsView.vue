@@ -67,17 +67,28 @@ export default {
 <style lang="scss">
 section.destinations {
   text-transform: uppercase;
+  @include medium {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
   > {
     header {
       @extend %center-flex;
       gap: 18px;
       margin: 24px 0 32px;
+      @include small {
+        margin: 32px 0;
+      }
       @include medium {
         justify-content: flex-start;
         gap: 19px;
         margin: 40px {
           bottom: 60px;
         }
+        margin-top: 0;
+        margin-bottom: 0;
       }
       @include xLarge {
         gap: 28px;
@@ -90,6 +101,10 @@ section.destinations {
         }
         letter-spacing: 2.7px;
         line-height: normal;
+        @include small {
+          font-size: 18px;
+          letter-spacing: 3px;
+        }
         @include medium {
           font-size: 20px;
           letter-spacing: 3.375px;
@@ -112,7 +127,7 @@ section.destinations {
         padding: 24px {
           top: 0;
         }
-        @include medium {
+        @include small {
           padding: 0 97px 12px;
         }
         @include xLarge {
@@ -143,8 +158,10 @@ section.destinations {
               color: colors.$second-text;
               line-height: normal;
               user-select: none;
-              @include medium {
+              @include small {
                 font-size: 16px;
+              }
+              @include medium {
                 letter-spacing: 2.7px;
                 padding-bottom: 15px;
               }
@@ -155,6 +172,9 @@ section.destinations {
               family: "Bellefair", serif;
               weight: normal;
               size: 56px;
+            }
+            @include small {
+              font-size: 65px;
             }
             @include medium {
               font-size: 80px;
@@ -176,12 +196,14 @@ section.destinations {
               family: "Barlow", sans-serif;
               size: 15px;
             }
+            @include small {
+              font-size: 16px;
+            }
             @include medium {
               margin-top: 8px;
               line-height: 175%;
-              font-size: 16px;
+              max-width: 760px;
             }
-
             @include xLarge {
               text-align: start;
               line-height: 177.778%;
@@ -243,6 +265,9 @@ section.destinations {
       img {
         width: 170px;
         order: -1;
+        @include small {
+          width: 200px;
+        }
         @include medium {
           width: 300px;
         }
