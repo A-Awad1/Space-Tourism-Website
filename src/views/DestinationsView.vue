@@ -121,6 +121,7 @@ section.destinations {
           margin: 0 100px;
         }
         @include xLarge {
+          margin: 0 130px;
           font-size: 22px;
         }
       }
@@ -287,14 +288,18 @@ section.destinations {
             }
             @include medium {
               margin-top: 8px;
-              line-height: 175%;
               max-width: 760px;
+              line-height: 3.5ex;
+              height: calc(3.5ex * 3);
+            }
+            @include large {
+              height: auto;
             }
             @include xLarge {
               text-align: start;
-              line-height: 177.778%;
               font-size: 18px;
               margin-top: 14px;
+              line-height: 177.778%;
             }
             @include smallHeight {
               @include small {
@@ -302,6 +307,10 @@ section.destinations {
               }
               @include medium {
                 font-size: 16px;
+              }
+              @include xLarge {
+                line-height: 3.5ex;
+                height: calc(3.5ex * 4 + 15px);
               }
             }
           }
