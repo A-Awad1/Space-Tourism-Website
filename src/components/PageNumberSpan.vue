@@ -19,9 +19,6 @@ export default {
 <style lang="scss">
 span.pageNumber {
   color: rgba(colors.$main-text, 0.25);
-  font: {
-    weight: 700;
-    size: inherit;
-  }
+  font-size: inherit;
 }
 </style>
