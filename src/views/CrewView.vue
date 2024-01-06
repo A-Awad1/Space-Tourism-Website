@@ -4,7 +4,13 @@
       <PageNumberSpan />
       <h2>meet your crew</h2>
     </header>
-    <img :src="currentImg" alt="crew-img" />
+    <div class="img">
+      <img
+        :src="currentImg"
+        alt="crew-img"
+        :class="{ 'custom-img': currentCrewName === 'Douglas Hurley' }"
+      />
+    </div>
     <hr />
     <ul>
       <li
@@ -57,10 +63,14 @@ export default {
 
 <style lang="scss">
 section.crew {
+  @extend %column-flex;
   text-transform: uppercase;
-  display: grid;
   padding: 24px {
     top: 0;
+  }
+  @include medium {
+    padding: 0 10px;
+    flex: 1;
   }
   > {
     header {
@@ -68,29 +78,61 @@ section.crew {
       @extend %center-flex;
       gap: 16px;
       font-size: 16px;
+      @include medium {
+        align-self: flex-start;
+        margin: 40px 39px 60px;
+        font-size: 20px;
+      }
       h2 {
         letter-spacing: 2.7px;
         font : {
           size: inherit;
           weight: normal;
         }
+        @include medium {
+          letter-spacing: 3.375px;
+        }
       }
     }
-    img {
+    div.img {
       height: 222px;
-      justify-self: center;
+      @include medium {
+        order: 2;
+        flex: 1;
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+      }
+      img {
+        max-height: 100%;
+        @include medium {
+          position: absolute;
+          &.custom-img {
+            max-height: 572px;
+          }
+        }
+      }
     }
     hr {
       background-color: #383b4b;
       width: 100%;
       height: 1px;
       border: none;
+      @include medium {
+        display: none;
+      }
     }
     ul {
       margin: 32px 0;
       display: flex;
       gap: 16px;
       justify-self: center;
+      @include medium {
+        order: 1;
+        margin: 40px 0;
+      }
       li {
         aspect-ratio: 1/1;
         width: 10px;
@@ -104,14 +146,15 @@ section.crew {
       }
     }
     div.info {
-      display: flex;
-      flex-direction: column;
+      @extend %column-flex;
       justify-content: center;
-      align-items: center;
       font-family: "Bellefair", serif;
       span {
         color: #fff;
         opacity: 0.5;
+        @include medium {
+          font-size: 24px;
+        }
       }
       h3 {
         margin: 8px 0 16px;
@@ -119,15 +162,24 @@ section.crew {
           size: 24px;
           weight: normal;
         }
+        @include medium {
+          font-size: 40px;
+        }
       }
       p {
         font-family: "Barlow", sans-serif;
         color: colors.$second-text;
         font-size: 15px;
-        line-height: 25px; /* 166.667% */
+        line-height: 25px;
         text: {
           transform: none;
           align: center;
+        }
+        @include medium {
+          font-size: 16px;
+          line-height: 28px;
+          text-wrap: balance;
+          max-width: 81%;
         }
       }
     }
