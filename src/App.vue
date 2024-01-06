@@ -1,6 +1,7 @@
 <template>
   <AppNav />
   <router-view />
+  <div class="overlay"></div>
 </template>
 
 <script>
@@ -67,5 +68,17 @@ body {
   position: relative;
   color: colors.$main-text;
   font-family: "Barlow Condensed", sans-serif;
+  .overlay {
+    display: none;
+  }
+  > section.crew + .overlay {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: colors.$button-text;
+    opacity: 0.6;
+    z-index: -1;
+  }
 }
 </style>
