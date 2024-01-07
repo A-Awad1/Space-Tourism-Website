@@ -205,7 +205,7 @@ section.crew {
         }
         @include xLarge {
           margin: 0 {
-            bottom: 50px;
+            bottom: 70px;
           }
         }
       }
@@ -235,6 +235,11 @@ section.crew {
         grid-area: 2 / 1 / span 1 / span 1;
         align-items: flex-start;
         width: min-content;
+      }
+      @include smallHeight {
+        @include xLarge {
+          width: auto;
+        }
       }
       span {
         color: #fff;
@@ -304,7 +309,7 @@ section.crew {
           font-size: 18px;
           max-width: 444px;
           line-height: 3.5ex;
-          height: calc(3.5ex * 5);
+          height: calc(3.5ex * 3);
           text: {
             align: start;
             wrap: wrap;
@@ -319,6 +324,7 @@ section.crew {
           }
           @include xLarge {
             font-size: 17px;
+            max-width: none;
           }
         }
       }
