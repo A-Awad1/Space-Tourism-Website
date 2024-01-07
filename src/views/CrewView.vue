@@ -37,7 +37,7 @@ export default {
   },
   data() {
     return {
-      currentCrewName: this.siteData.crew.map((e) => e.name)[1],
+      currentCrewName: this.siteData.crew.map((e) => e.name)[0],
     };
   },
   components: {
