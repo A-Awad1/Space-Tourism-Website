@@ -76,7 +76,7 @@ section.crew {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr auto;
-    padding: 62px 0 0 166px;
+    padding: 62px 137px 0 166px;
     justify-items: start;
   }
   > {
@@ -92,9 +92,7 @@ section.crew {
       }
       @include xLarge {
         grid-area: 1 / 1 / span 1 / span 1;
-        margin: 0 {
-          top: 14px;
-        }
+        margin: 0;
         gap: 24px;
         font-size: 28px;
       }
@@ -124,7 +122,7 @@ section.crew {
         overflow: hidden;
       }
       @include xLarge {
-        grid-area: 1 / 2 / span 3 / span 1;
+        grid-area: 2 / 2 / span 2 / span 1;
         overflow: visible;
         height: 100%;
       }
@@ -142,7 +140,10 @@ section.crew {
             max-height: 572px;
           }
           @include xLarge {
-            max-height: 100%;
+            position: absolute;
+            max-height: none;
+            height: calc(100% + 45px);
+            top: -45px;
           }
         }
       }
@@ -243,8 +244,11 @@ section.crew {
         }
         @include xLarge {
           font-size: 18px;
-          line-height: 32px;
           max-width: 444px;
+          line-height: 32px;
+          height: 160px;
+          // line-height: 3.5ex;
+          // height: calc(3.5ex * 4 + 15px);
           text: {
             align: start;
             wrap: wrap;
