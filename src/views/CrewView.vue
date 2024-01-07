@@ -72,6 +72,13 @@ section.crew {
     padding: 0 10px;
     flex: 1;
   }
+  @include xLarge {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    padding: 62px 0 0 166px;
+    justify-items: start;
+  }
   > {
     header {
       margin: 24px 0 32px;
@@ -83,6 +90,14 @@ section.crew {
         margin: 40px 39px 60px;
         font-size: 20px;
       }
+      @include xLarge {
+        grid-area: 1 / 1 / span 1 / span 1;
+        margin: 0 {
+          top: 14px;
+        }
+        gap: 24px;
+        font-size: 28px;
+      }
       h2 {
         letter-spacing: 2.7px;
         font : {
@@ -91,6 +106,9 @@ section.crew {
         }
         @include medium {
           letter-spacing: 3.375px;
+        }
+        @include xLarge {
+          letter-spacing: 4.725px;
         }
       }
     }
@@ -105,12 +123,26 @@ section.crew {
         justify-content: center;
         overflow: hidden;
       }
+      @include xLarge {
+        grid-area: 1 / 2 / span 3 / span 1;
+        overflow: visible;
+        height: 100%;
+      }
       img {
         max-height: 100%;
         @include medium {
           position: absolute;
-          &.custom-img {
+        }
+        @include xLarge {
+          max-height: 100%;
+          position: static;
+        }
+        &.custom-img {
+          @include medium {
             max-height: 572px;
+          }
+          @include xLarge {
+            max-height: 100%;
           }
         }
       }
@@ -133,6 +165,14 @@ section.crew {
         order: 1;
         margin: 40px 0;
       }
+      @include xLarge {
+        grid-area: 3 / 1 / span 1 / span 1;
+        justify-self: start;
+        gap: 24px;
+        margin: 0 {
+          bottom: 94px;
+        }
+      }
       li {
         aspect-ratio: 1/1;
         width: 10px;
@@ -140,8 +180,14 @@ section.crew {
         clip-path: circle();
         cursor: pointer;
         transition: background-color $main-transition;
+        @include xLarge {
+          width: 15px;
+        }
         &.active {
           background-color: colors.$main-text;
+        }
+        &:not(.active):hover {
+          background-color: rgba(colors.$main-text, 0.8);
         }
       }
     }
@@ -149,11 +195,19 @@ section.crew {
       @extend %column-flex;
       justify-content: center;
       font-family: "Bellefair", serif;
+      @include xLarge {
+        grid-area: 2 / 1 / span 1 / span 1;
+        align-items: flex-start;
+        width: min-content;
+      }
       span {
         color: #fff;
         opacity: 0.5;
         @include medium {
           font-size: 24px;
+        }
+        @include xLarge {
+          font-size: 32px;
         }
       }
       h3 {
@@ -164,6 +218,12 @@ section.crew {
         }
         @include medium {
           font-size: 40px;
+        }
+        @include xLarge {
+          margin: 15px 9px 27px 0;
+          white-space: nowrap;
+          color: #fff;
+          font-size: 56px;
         }
       }
       p {
@@ -180,6 +240,15 @@ section.crew {
           line-height: 28px;
           text-wrap: balance;
           max-width: 81%;
+        }
+        @include xLarge {
+          font-size: 18px;
+          line-height: 32px;
+          max-width: 444px;
+          text: {
+            align: start;
+            wrap: wrap;
+          }
         }
       }
     }
