@@ -68,9 +68,10 @@ section.crew {
   padding: 24px {
     top: 0;
   }
-  @include medium {
+  @include small {
     padding: 0 10px;
     flex: 1;
+    max-height: 1000px;
   }
   @include xLarge {
     display: grid;
@@ -78,6 +79,7 @@ section.crew {
     grid-template-rows: auto 1fr auto;
     padding: 62px 137px 0 166px;
     justify-items: start;
+    max-height: 800px;
   }
   > {
     header {
@@ -85,7 +87,7 @@ section.crew {
       @extend %center-flex;
       gap: 16px;
       font-size: 16px;
-      @include medium {
+      @include small {
         align-self: flex-start;
         margin: 40px 39px 60px;
         font-size: 20px;
@@ -102,7 +104,7 @@ section.crew {
           size: inherit;
           weight: normal;
         }
-        @include medium {
+        @include small {
           letter-spacing: 3.375px;
         }
         @include xLarge {
@@ -112,7 +114,7 @@ section.crew {
     }
     div.img {
       height: 222px;
-      @include medium {
+      @include small {
         order: 2;
         flex: 1;
         position: relative;
@@ -120,27 +122,29 @@ section.crew {
         display: flex;
         justify-content: center;
         overflow: hidden;
+        &:has(img.custom-img) {
+          margin-top: -20px;
+        }
       }
       @include xLarge {
         grid-area: 2 / 2 / span 2 / span 1;
         overflow: visible;
         height: 100%;
+        &:has(img.custom-img) {
+          margin-top: 0;
+        }
       }
       img {
-        max-height: 100%;
-        @include medium {
+        height: 100%;
+        @include small {
           position: absolute;
         }
-        @include xLarge {
-          position: static;
-        }
         &.custom-img {
-          @include medium {
-            max-height: 572px;
+          @include small {
+            top: 5%;
           }
           @include xLarge {
-            position: absolute;
-            max-height: none;
+            left: 20px;
             top: -45px;
             height: calc(100% + 45px);
           }
@@ -152,7 +156,7 @@ section.crew {
       width: 100%;
       height: 1px;
       border: none;
-      @include medium {
+      @include small {
         display: none;
       }
     }
@@ -161,7 +165,7 @@ section.crew {
       display: flex;
       gap: 16px;
       justify-self: center;
-      @include medium {
+      @include small {
         order: 1;
         margin: 40px 0;
       }
@@ -203,7 +207,7 @@ section.crew {
       span {
         color: #fff;
         opacity: 0.5;
-        @include medium {
+        @include small {
           font-size: 24px;
         }
         @include xLarge {
@@ -216,7 +220,7 @@ section.crew {
           size: 24px;
           weight: normal;
         }
-        @include medium {
+        @include small {
           font-size: 40px;
         }
         @include xLarge {
@@ -235,7 +239,7 @@ section.crew {
           transform: none;
           align: center;
         }
-        @include medium {
+        @include small {
           font-size: 16px;
           line-height: 28px;
           text-wrap: balance;
