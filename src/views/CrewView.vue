@@ -37,7 +37,7 @@ export default {
   },
   data() {
     return {
-      currentCrewName: this.siteData.crew.map((e) => e.name)[0],
+      currentCrewName: this.siteData.crew.map((e) => e.name)[1],
     };
   },
   components: {
@@ -98,6 +98,18 @@ section.crew {
         gap: 24px;
         font-size: 28px;
       }
+      @include smallHeight {
+        @include small {
+          margin: 25px 15px 35px;
+        }
+        @include large {
+          margin: 30px 30px 35px;
+        }
+        @include xLarge {
+          margin: 0;
+          font-size: 25px;
+        }
+      }
       h2 {
         letter-spacing: 2.7px;
         font : {
@@ -122,15 +134,20 @@ section.crew {
         display: flex;
         justify-content: center;
         overflow: hidden;
-        &:has(img.custom-img) {
-          margin-top: -20px;
-        }
       }
       @include xLarge {
         grid-area: 2 / 2 / span 2 / span 1;
         overflow: visible;
         height: 100%;
-        &:has(img.custom-img) {
+      }
+      &:has(img.custom-img) {
+        @include small {
+          margin-top: -20px;
+        }
+        @include xLarge {
+          margin-top: 0;
+        }
+        @include smallHeight {
           margin-top: 0;
         }
       }
@@ -147,6 +164,11 @@ section.crew {
             left: 20px;
             top: -45px;
             height: calc(100% + 45px);
+          }
+          @include smallHeight {
+            left: auto;
+            top: auto;
+            height: 100%;
           }
         }
       }
@@ -175,6 +197,16 @@ section.crew {
         gap: 24px;
         margin: 0 {
           bottom: 94px;
+        }
+      }
+      @include smallHeight {
+        @include small {
+          margin: 25px 0;
+        }
+        @include xLarge {
+          margin: 0 {
+            bottom: 50px;
+          }
         }
       }
       li {
@@ -213,8 +245,20 @@ section.crew {
         @include xLarge {
           font-size: 32px;
         }
+        @include smallHeight {
+          @include small {
+            font-size: 22px;
+          }
+          @include large {
+            font-size: 24px;
+          }
+          @include xLarge {
+            font-size: 26px;
+          }
+        }
       }
       h3 {
+        white-space: nowrap;
         margin: 8px 0 16px;
         font: {
           size: 24px;
@@ -225,9 +269,20 @@ section.crew {
         }
         @include xLarge {
           margin: 15px 9px 27px 0;
-          white-space: nowrap;
           color: #fff;
           font-size: 56px;
+        }
+        @include smallHeight {
+          @include small {
+            font-size: 32px;
+            margin: 8px 0 10px;
+          }
+          @include large {
+            font-size: 36px;
+          }
+          @include xLarge {
+            font-size: 40px;
+          }
         }
       }
       p {
@@ -253,6 +308,17 @@ section.crew {
           text: {
             align: start;
             wrap: wrap;
+          }
+        }
+        @include smallHeight {
+          @include small {
+            font-size: 15px;
+          }
+          @include large {
+            font-size: 16px;
+          }
+          @include xLarge {
+            font-size: 17px;
           }
         }
       }
