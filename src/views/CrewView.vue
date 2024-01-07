@@ -132,7 +132,6 @@ section.crew {
           position: absolute;
         }
         @include xLarge {
-          max-height: 100%;
           position: static;
         }
         &.custom-img {
@@ -142,8 +141,8 @@ section.crew {
           @include xLarge {
             position: absolute;
             max-height: none;
-            height: calc(100% + 45px);
             top: -45px;
+            height: calc(100% + 45px);
           }
         }
       }
@@ -245,10 +244,8 @@ section.crew {
         @include xLarge {
           font-size: 18px;
           max-width: 444px;
-          line-height: 32px;
-          height: 160px;
-          // line-height: 3.5ex;
-          // height: calc(3.5ex * 4 + 15px);
+          line-height: 3.5ex;
+          height: calc(3.5ex * 5);
           text: {
             align: start;
             wrap: wrap;
