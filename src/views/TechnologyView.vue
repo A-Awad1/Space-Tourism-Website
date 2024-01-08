@@ -137,8 +137,7 @@ section.technology {
               color: colors.$second-text;
               text-align: center;
               line-height: 25px;
-              margin: 0 24px;
-              hyphens: nowrap;
+              margin: 0 24.2px 10px;
               font: {
                 family: "Barlow", sans-serif;
                 size: 15px;
