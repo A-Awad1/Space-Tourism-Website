@@ -10,13 +10,13 @@
     opacity: 0;
     transition: $main-transition;
   }
+  &:active::after {
+    opacity: 1;
+  }
   &.active::after {
     opacity: 1;
   }
   &:not(.active):hover::after {
     opacity: 0.5;
-  }
-  &:active::after {
-    opacity: 1;
   }
 }

@@ -31,7 +31,7 @@ body,
 body {
   // start background
   background: {
-    color: colors.$button-text;
+    color: colors.$third-text;
     attachment: fixed;
     repeat: no-repeat;
     size: cover;
@@ -76,7 +76,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: colors.$button-text;
+    background-color: colors.$third-text;
     opacity: 0.6;
     z-index: -1;
   }

@@ -180,7 +180,7 @@ section.home {
       cursor: pointer;
       text-transform: uppercase;
       letter-spacing: 1.25px;
-      color: colors.$button-text;
+      color: colors.$third-text;
       border: none;
       border-radius: 50%;
       aspect-ratio: 1/1;
