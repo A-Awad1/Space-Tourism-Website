@@ -49,7 +49,7 @@ export default {
     currentImg: function () {
       return require(`../assets/technology/image-${this.currentTechName
         .replace(" ", "-")
-        .toLowerCase()}-landscape.jpg`);
+        .toLowerCase()}-portrait.jpg`);
       // portrait
     },
     currentName: function () {
@@ -67,6 +67,11 @@ export default {
 <style lang="scss">
 section.technology {
   text-transform: uppercase;
+  flex: 1;
+  @include xLarge {
+    display: flex;
+    flex-direction: column;
+  }
   > {
     header {
       @extend %center-flex;
@@ -78,6 +83,11 @@ section.technology {
         margin: 40px 10px 60px 39px;
         font-size: 20px;
       }
+      @include xLarge {
+        gap: 32px;
+        margin: 76px 10px 26px 166px;
+        font-size: 28px;
+      }
       h2 {
         letter-spacing: 2.7px;
         font: {
@@ -87,14 +97,34 @@ section.technology {
         @include medium {
           letter-spacing: 3.375px;
         }
+        @include xLarge {
+          letter-spacing: 4.725px;
+        }
       }
     }
     main {
       @extend %column-flex;
+      @include xLarge {
+        flex: 1;
+        padding-left: 165px;
+        flex-direction: row;
+        gap: 80px;
+        align-content: flex-start;
+        flex-wrap: wrap;
+      }
       > {
         div.img {
+          @include xLarge {
+            order: 1;
+            margin-left: auto;
+            max-height: 527px;
+            height: 100%;
+          }
           img {
             max-width: 100%;
+            @include xLarge {
+              height: 100%;
+            }
           }
         }
         ul {
@@ -103,6 +133,11 @@ section.technology {
           margin: 34px 0 26px;
           @include medium {
             margin: 56px 0 44px;
+          }
+          @include xLarge {
+            gap: 32px;
+            flex-direction: column;
+            margin: 0;
           }
           li {
             counter-increment: vehicle;
@@ -121,6 +156,11 @@ section.technology {
               font-size: 24px;
               letter-spacing: 1.5px;
             }
+            @include xLarge {
+              width: 80px;
+              font-size: 32px;
+              letter-spacing: 2px;
+            }
             &::before {
               content: counter(vehicle);
             }
@@ -135,6 +175,10 @@ section.technology {
         }
         div.info {
           @extend %column-flex;
+          @include xLarge {
+            align-items: flex-start;
+            width: min-content;
+          }
           > {
             span {
               color: colors.$second-text;
@@ -147,6 +191,7 @@ section.technology {
             }
             h3 {
               margin: 9px 0 16px;
+              white-space: nowrap;
               font: {
                 family: "Bellefair", serif;
                 size: 24px;
@@ -155,6 +200,10 @@ section.technology {
               @include medium {
                 margin-top: 16px;
                 font-size: 40px;
+              }
+              @include xLarge {
+                margin: 11px 0 17px;
+                font-size: 56px;
               }
             }
             p {
@@ -171,6 +220,15 @@ section.technology {
                 font-size: 16px;
                 line-height: 28px;
                 max-width: 59%;
+              }
+              @include xLarge {
+                margin: 0;
+                text-align: start;
+                font-size: 18px;
+                line-height: 3.5ex;
+                height: calc(3.5ex * 6);
+                min-width: 444px;
+                max-width: 94%;
               }
             }
           }
