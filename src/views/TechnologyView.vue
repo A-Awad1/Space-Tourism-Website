@@ -72,11 +72,20 @@ section.technology {
       @extend %center-flex;
       gap: 16px;
       margin: 24px 0 32px;
+      font-size: 16px;
+      @include medium {
+        justify-content: flex-start;
+        margin: 40px 10px 60px 39px;
+        font-size: 20px;
+      }
       h2 {
         letter-spacing: 2.7px;
         font: {
-          size: 16px;
+          size: inherit;
           weight: normal;
+        }
+        @include medium {
+          letter-spacing: 3.375px;
         }
       }
     }
@@ -92,18 +101,26 @@ section.technology {
           display: flex;
           gap: 16px;
           margin: 34px 0 26px;
+          @include medium {
+            margin: 56px 0 44px;
+          }
           li {
             counter-increment: vehicle;
             aspect-ratio: 1/1;
             width: 40px;
+            border-radius: 50%;
             font-family: "Bellefair", serif;
             letter-spacing: 1px;
             cursor: pointer;
             --border-opacity: 0.25;
             border: 1px solid rgba(colors.$main-text, var(--border-opacity));
-            border-radius: 50%;
             transition: $main-transition;
             @extend %center-flex;
+            @include medium {
+              width: 60px;
+              font-size: 24px;
+              letter-spacing: 1.5px;
+            }
             &::before {
               content: counter(vehicle);
             }
@@ -123,6 +140,10 @@ section.technology {
               color: colors.$second-text;
               font-size: 14px;
               letter-spacing: 2.362px;
+              @include medium {
+                font-size: 16px;
+                letter-spacing: 2.7px;
+              }
             }
             h3 {
               margin: 9px 0 16px;
@@ -130,6 +151,10 @@ section.technology {
                 family: "Bellefair", serif;
                 size: 24px;
                 weight: normal;
+              }
+              @include medium {
+                margin-top: 16px;
+                font-size: 40px;
               }
             }
             p {
@@ -141,6 +166,11 @@ section.technology {
               font: {
                 family: "Barlow", sans-serif;
                 size: 15px;
+              }
+              @include medium {
+                font-size: 16px;
+                line-height: 28px;
+                max-width: 59%;
               }
             }
           }
