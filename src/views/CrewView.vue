@@ -77,9 +77,14 @@ section.crew {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto 1fr auto;
-    padding: 62px 137px 0 166px;
+    padding: 76px 137px 0 166px;
     justify-items: start;
     max-height: 800px;
+  }
+  @include smallHeight {
+    @include xLarge {
+      padding: 65px 120px 0 130px;
+    }
   }
   > {
     header {
@@ -107,7 +112,7 @@ section.crew {
         }
         @include xLarge {
           margin: 0;
-          font-size: 25px;
+          font-size: 22px;
         }
       }
       h2 {
