@@ -50,7 +50,7 @@ export default {
       return require(`../assets/technology/image-${this.currentTechName
         .replace(" ", "-")
         .toLowerCase()}-portrait.jpg`);
-      // portrait
+      // .toLowerCase()}-landscape.jpg`);
     },
     currentName: function () {
       return this.currentTech.name;
@@ -67,20 +67,19 @@ export default {
 <style lang="scss">
 section.technology {
   text-transform: uppercase;
-  flex: 1;
-  @include xLarge {
-    display: flex;
-    flex-direction: column;
-  }
   > {
     header {
       @extend %center-flex;
       gap: 16px;
       margin: 24px 0 32px;
       font-size: 16px;
-      @include medium {
+      @include small {
         justify-content: flex-start;
-        margin: 40px 10px 60px 39px;
+        margin: 40px 10px 40px 39px;
+        font-size: 18px;
+      }
+      @include medium {
+        margin-bottom: 60px;
         font-size: 20px;
       }
       @include xLarge {
@@ -94,6 +93,9 @@ section.technology {
           size: inherit;
           weight: normal;
         }
+        @include small {
+          letter-spacing: 3px;
+        }
         @include medium {
           letter-spacing: 3.375px;
         }
@@ -105,25 +107,27 @@ section.technology {
     main {
       @extend %column-flex;
       @include xLarge {
-        flex: 1;
         padding-left: 165px;
         flex-direction: row;
         gap: 80px;
-        align-content: flex-start;
-        flex-wrap: wrap;
+        justify-content: center;
       }
       > {
         div.img {
           @include xLarge {
             order: 1;
-            margin-left: auto;
+            margin-left: 50px;
             max-height: 527px;
-            height: 100%;
           }
           img {
             max-width: 100%;
+            @include medium {
+              max-height: 30.3vh;
+              min-height: 250px;
+            }
             @include xLarge {
-              height: 100%;
+              max-height: none;
+              min-height: none;
             }
           }
         }
@@ -132,7 +136,7 @@ section.technology {
           gap: 16px;
           margin: 34px 0 26px;
           @include medium {
-            margin: 56px 0 44px;
+            margin: 5.5vh 0 4.2vh;
           }
           @include xLarge {
             gap: 32px;
@@ -145,21 +149,22 @@ section.technology {
             width: 40px;
             border-radius: 50%;
             font-family: "Bellefair", serif;
-            letter-spacing: 1px;
             cursor: pointer;
             --border-opacity: 0.25;
             border: 1px solid rgba(colors.$main-text, var(--border-opacity));
             transition: $main-transition;
             @extend %center-flex;
+            @include small {
+              width: 50px;
+              font-size: 20px;
+            }
             @include medium {
               width: 60px;
               font-size: 24px;
-              letter-spacing: 1.5px;
             }
             @include xLarge {
               width: 80px;
               font-size: 32px;
-              letter-spacing: 2px;
             }
             &::before {
               content: counter(vehicle);
@@ -177,14 +182,15 @@ section.technology {
           @extend %column-flex;
           @include xLarge {
             align-items: flex-start;
-            width: min-content;
+            justify-self: flex-start;
+            width: 470px;
           }
           > {
             span {
               color: colors.$second-text;
               font-size: 14px;
               letter-spacing: 2.362px;
-              @include medium {
+              @include small {
                 font-size: 16px;
                 letter-spacing: 2.7px;
               }
@@ -197,8 +203,11 @@ section.technology {
                 size: 24px;
                 weight: normal;
               }
-              @include medium {
+              @include small {
                 margin-top: 16px;
+                font-size: 30px;
+              }
+              @include medium {
                 font-size: 40px;
               }
               @include xLarge {
@@ -217,18 +226,18 @@ section.technology {
                 size: 15px;
               }
               @include medium {
+                margin-bottom: 0;
                 font-size: 16px;
                 line-height: 28px;
                 max-width: 59%;
               }
               @include xLarge {
-                margin: 0;
                 text-align: start;
+                margin: 0;
                 font-size: 18px;
                 line-height: 3.5ex;
                 height: calc(3.5ex * 6);
-                min-width: 444px;
-                max-width: 94%;
+                max-width: 444px;
               }
             }
           }
