@@ -67,6 +67,13 @@ export default {
 <style lang="scss">
 section.technology {
   text-transform: uppercase;
+  @include smallHeight {
+    @include xLarge {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+  }
   > {
     header {
       @extend %center-flex;
@@ -86,6 +93,20 @@ section.technology {
         gap: 32px;
         margin: 76px 10px 26px 166px;
         font-size: 28px;
+      }
+      @include smallHeight {
+        @include small {
+          margin: 25px {
+            right: 10px;
+          }
+        }
+        @include medium {
+          font-size: 20px;
+        }
+        @include xLarge {
+          font-size: 22px;
+          margin: 65px 10px 0 130px;
+        }
       }
       h2 {
         letter-spacing: 2.7px;
@@ -112,12 +133,25 @@ section.technology {
         gap: 80px;
         justify-content: center;
       }
+      @include smallHeight {
+        @include xLarge {
+          flex: 1;
+        }
+      }
       > {
         div.img {
           @include xLarge {
             order: 1;
             margin-left: 50px;
             max-height: 527px;
+          }
+          @include smallHeight {
+            @include xLarge {
+              height: 100%;
+              max-height: 58.5vh;
+              display: flex;
+              align-items: center;
+            }
           }
           img {
             max-width: 100%;
@@ -126,8 +160,17 @@ section.technology {
               min-height: 250px;
             }
             @include xLarge {
-              max-height: none;
               min-height: none;
+              max-height: none;
+            }
+            @include smallHeight {
+              @include small {
+                max-height: 250px;
+              }
+              @include xLarge {
+                min-height: none;
+                max-height: 100%;
+              }
             }
           }
         }
@@ -142,6 +185,15 @@ section.technology {
             gap: 32px;
             flex-direction: column;
             margin: 0;
+            padding: 50px 0;
+          }
+          @include smallHeight {
+            @include medium {
+              margin: 15px 0;
+            }
+            @include xLarge {
+              margin: 0;
+            }
           }
           li {
             counter-increment: vehicle;
@@ -166,6 +218,16 @@ section.technology {
               width: 80px;
               font-size: 32px;
             }
+            @include smallHeight {
+              @include medium {
+                width: 55px;
+                font-size: 22px;
+              }
+              @include xLarge {
+                width: 70px;
+                font-size: 30px;
+              }
+            }
             &::before {
               content: counter(vehicle);
             }
@@ -184,6 +246,7 @@ section.technology {
             align-items: flex-start;
             justify-self: flex-start;
             width: 470px;
+            padding: 50px 0;
           }
           > {
             span {
@@ -214,6 +277,15 @@ section.technology {
                 margin: 11px 0 17px;
                 font-size: 56px;
               }
+              @include smallHeight {
+                @include medium {
+                  margin: 9px 0;
+                }
+                @include xLarge {
+                  margin: 11px 0;
+                  font-size: 50px;
+                }
+              }
             }
             p {
               text-transform: none;
@@ -238,6 +310,17 @@ section.technology {
                 line-height: 3.5ex;
                 height: calc(3.5ex * 6);
                 max-width: 444px;
+              }
+              @include smallHeight {
+                @include small {
+                  max-width: 619px;
+                }
+                @include xLarge {
+                  max-width: 444px;
+                  font-size: 17px;
+                  line-height: 3ex;
+                  height: calc(3ex * 6);
+                }
               }
             }
           }
