@@ -56,21 +56,17 @@ npm run build
 
 ## Output design Screenshots:
 
-Home Page in Mobile Layout :
+Home Page in Mobile Layout : <br />
 ![Output](/output-screenshots/1.Home-Page-Mobile.png)
-<br />
 
-Nav Bar in Mobile Layout :
+Nav Bar in Mobile Layout : <br />
 ![Output](/output-screenshots/2.Nav-Bar-Mobile.png)
-<br />
 
-Destination Page in Tablet Layout :
+Destination Page in Tablet Layout : <br />
 ![Output](/output-screenshots/3.Destination-Page-Tablet.png)
-<br />
 
-Crew Page in Desktop Layout :
+Crew Page in Desktop Layout : <br />
 ![Output](/output-screenshots/4.Crew-Page-Desktop.png)
-<br />
 
-Technology Page in Desktop Layout :
+Technology Page in Desktop Layout : <br />
 ![Output](/output-screenshots/5.Technology-Page-Desktop.png)
