@@ -1,7 +1,5 @@
 # Multi Page Space Tourism Website (from Frontend Mentor Website)
 
-**Project Progress : ![80%](https://progress-bar.dev/80/?title=done)**
-
 <!-- **[See Website Live]()** -->
 
 This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3).
@@ -26,10 +24,8 @@ This Project is designed from a professional figma file.
 
 - Vue 3
 - Vue Router
-- Vuex
 - SCSS
 - JavaScript (ECMAScript, AJAX, JSON)
-- Font Awesome
 - Mobile First Approach
 
 <!-- **[See Website Live]()** -->
