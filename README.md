@@ -2,7 +2,7 @@
 
 **[See Website Live](https://space-tourism-website-vue-a-awad.netlify.app/)**
 
-This project is a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3).
+This project is a challenge from **[Frontend Mentor](https://www.frontendmentor.io/challenges/space-tourism-multipage-website-gRWj1URZ3)**.
 
 ## Overview:
 
