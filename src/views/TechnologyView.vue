@@ -35,6 +35,7 @@ export default {
   data() {
     return {
       currentTechName: this.siteData.technology.map((e) => e.name)[0],
+      imgSort: window.innerWidth <= 1200 ? "landscape" : "portrait",
     };
   },
   computed: {
@@ -47,10 +48,8 @@ export default {
       )[0];
     },
     currentImg: function () {
-      return require(`../assets/technology/image-${this.currentTechName
-        .replace(" ", "-")
-        .toLowerCase()}-portrait.jpg`);
-      // .toLowerCase()}-landscape.jpg`);
+      let name = this.currentTechName.replace(" ", "-").toLowerCase();
+      return require(`../assets/technology/image-${name}-${this.imgSort}.jpg`);
     },
     currentName: function () {
       return this.currentTech.name;
@@ -58,6 +57,10 @@ export default {
     currentDesc: function () {
       return this.currentTech.description.replaceAll("-", "&#8209;");
     },
+  },
+  mounted: function () {
+    window.onresize = () =>
+      (this.imgSort = window.innerWidth <= 1200 ? "landscape" : "portrait");
   },
   components: {
     PageNumberSpan,
