@@ -54,16 +54,25 @@ npm run serve
 npm run build
 ```
 
-<!--
 ## Output design Screenshots:
 
-Large Screens Home Page :
-![Output](/output-screenshots/1.home-large-screens.png)
+Home Page in Mobile Layout :
+![Output](/output-screenshots/1.Home-Page-Mobile.png)
 
-Medium Screens Home Page :
-![Output](/output-screenshots/2.home-medium-screens.png)
+Nav Bar in Mobile Layout :
+![Output](/output-screenshots/2.Nav-Bar-Mobile.png)
 
-Mobile Screens Home Page :
-![Output](/output-screenshots/3.home-mobile-screens.png)
+Destination Page in Tablet Layout :
+![Output](/output-screenshots/3.Destination-Page-Tablet.png)
 
--->
+Crew Page in Desktop Layout :
+![Output](/output-screenshots/4.Crew-Page-Desktop.png)
+
+Technology Page in Desktop Layout :
+![Output](/output-screenshots/5.Technology-Page-Desktop.png)
+
+
+
+
+
+
