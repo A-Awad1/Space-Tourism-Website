@@ -30,7 +30,7 @@ This Project is designed from a professional figma file.
 
 ## Author in Linkedin
 
-[Linkedin Profile](https://www.linkedin.com/in/ahmedawad123/)
+**[Linkedin Profile](https://www.linkedin.com/in/ahmedawad123/)**
 
 **[See Website Live](https://space-tourism-website-vue-a-awad.netlify.app/)**
 
