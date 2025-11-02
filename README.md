@@ -1,4 +1,4 @@
-# Multi Page Space Tourism Website (from Frontend Mentor Website)
+# Multi Page Space Tourism Website (Frontend Mentor Challenge)
 
 **[See Website Live](https://space-tourism-website-vue-a-awad.netlify.app/)**
 
